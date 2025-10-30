@@ -1,0 +1,24 @@
+# Ignore Python virtual environment
+.venv
+__pycache__
+
+# Ignore logs
+logs
+
+# Ignore Kubernetes deployment files
+
+# Ignore Dockerfiles themselves
+Dockerfile*
+docker-compose.yml
+def-values.yml
+.dockerignore
+values.yaml
+compose_1.txt
+
+
+# Ignore system files
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.DS_Store
