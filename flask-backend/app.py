@@ -5,10 +5,19 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import logging 
 import time
 import pymysql
+import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'supersecretkey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://flaskuser:flaskpass@mysql-db/flaskapp'
+
+db_user = os.getenv("MYSQL_USER")
+db_pass = os.getenv("MYSQL_PASSWORD")
+db_host = os.getenv("MYSQL_HOST")
+db_name = os.getenv("MYSQL_DATABASE")
+secretkey = os.getenv("SECRET_KEY")
+
+app.config['SECRET_KEY'] = secretkey
+
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{db_user}:{db_pass}@{db_host}/{db_name}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -26,10 +35,10 @@ def wait_for_db():
     while True:
         try:
             conn = pymysql.connect(
-                host='mysql-db',
-                user='flaskuser',
-                password='flaskpass',
-                database='flaskapp'
+                host=db_host,
+                user=db_user,
+                password=db_pass,
+                database=db_name
             )
             conn.close()
             print("MySQL is ready!")
@@ -123,4 +132,3 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
