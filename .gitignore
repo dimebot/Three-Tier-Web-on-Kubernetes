@@ -8,7 +8,6 @@ logs
 # Ignore Kubernetes deployment files
 
 # Ignore Dockerfiles themselves
-Dockerfile*
 def_values.yml
 .dockerignore
 values.yaml
