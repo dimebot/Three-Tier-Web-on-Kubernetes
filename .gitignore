@@ -9,7 +9,6 @@ logs
 
 # Ignore Dockerfiles themselves
 Dockerfile*
-docker-compose.yml
 def_values.yml
 .dockerignore
 values.yaml
