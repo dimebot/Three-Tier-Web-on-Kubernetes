@@ -1,0 +1,59 @@
+version: "3.9"
+
+networks:
+  flask-network:
+    driver: bridge
+
+services:
+  flask-backend:
+    build: 
+      context: ./flask-backend   # folder where your Flask Dockerfile is located
+      dockerfile: Dockerfile     # optional if it's named "Dockerfile"
+    image: dimev1/flask-backend:latest  # still tags the built image
+    container_name: flask-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MYSQL_HOST=mysql-db
+      - MYSQL_USER=flaskuser
+      - MYSQL_PASSWORD=flaskpass
+      - MYSQL_DB=flaskapp
+    depends_on:
+      - mysql-db
+    networks:
+      - flask-network
+
+  nginx-frontend:
+    build:
+      context: ./nginx-frontend  # folder where your Nginx Dockerfile is
+      dockerfile: Dockerfile
+    image: dimev1/nginx-frontend:latest
+    container_name: nginx-frontend
+    ports:
+      - "8000:80"
+    depends_on:
+      - flask-backend
+    networks:
+      - flask-network
+
+  mysql-db:
+    build:
+      context: ./mysql-db        # folder where your MySQL Dockerfile is
+      dockerfile: Dockerfile
+    image: dimev1/mysql-db:latest
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: flaskapp
+      MYSQL_USER: flaskuser
+      MYSQL_PASSWORD: flaskpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - flask-network
+
+volumes:
+  mysql-data:
