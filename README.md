@@ -126,7 +126,7 @@ Open the URL in your browser to access the frontend.
         
     -   Check Fluentd pod logs for errors
         
--   **Pods in CrashLoopBackOff?**
+-   **Pods in CrashLoopBackOff**
     
     ```
     kubectl describe pod <pod-name>
@@ -135,7 +135,7 @@ Open the URL in your browser to access the frontend.
     kubectl logs <pod-name>
     ```
     
--   **Access issues on localhost?**
+-   **Access issues on localhost**
     
     -   Use `minikube service nginx-frontend --url` to get the correct external URL.
 ## Author
