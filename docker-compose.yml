@@ -12,6 +12,10 @@ services:
       - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
       - SPLUNK_PASSWORD=${SPLUNK_PASSWORD}
     volumes:
-      - /mnt/disk2/splunk-data:/opt/splunk/var     # logs, indexed data
-      - /mnt/disk2/splunk-etc:/opt/splunk/etc      # configs, users, apps
+      - splunk_var:/opt/splunk/var
+      - splunk_etc:/opt/splunk/etc
     restart: always
+
+volumes:
+  splunk_var:
+  splunk_etc:
