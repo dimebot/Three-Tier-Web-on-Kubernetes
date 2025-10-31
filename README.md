@@ -53,9 +53,9 @@ kubectl create secret generic flask-secrets \
 <br>
 
 ### 3. Spin up the Splunk Container
-`docker compose -f docker-compose.yml up -d`
-
-Wait ~1 minute for the container to fully start.
+- Create a `.env` file and set the variable `SPLUNK_PASSWORD`.
+- Start the container `docker compose -f docker-compose.yml up -d`.
+- Wait ~1 minute for the container to fully start.
 
 <br>
 
