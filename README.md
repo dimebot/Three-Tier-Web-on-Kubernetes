@@ -72,8 +72,9 @@ docker compose -f docker-compose.yml up -d
 -   Click **Next** and **Finish**
 -   Copy the generated **Token Value**
     
--   Use this token in your `enc_values.yaml`.
+-   Use this token in your `enc_values.yaml`
 -  Also update the *host* in `enc_values.yaml`
+
 **Note**: *The host name shouldn't be set to localhost, use your device's private IP retrieved from `ipconfig` or `ifconfig`*.
 
 <br>
