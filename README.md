@@ -140,8 +140,7 @@ Open the URL in your browser to access the frontend.
     
     -   Use `minikube service nginx-frontend --url` to get the correct external URL.
 ## Author
-
-**Shivam**  
+ 
 🔗 [GitHub: @dimebot](https://github.com/dimebot)
 
 ----------
