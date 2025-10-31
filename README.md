@@ -54,7 +54,8 @@ kubectl create secret generic flask-secrets \
 
 ### 3. Spin up the Splunk Container
 - Create a `.env` file and set the variable `SPLUNK_PASSWORD`.
-- Start the container `docker compose -f docker-compose.yml up -d`.
+- Start the container 
+```docker compose -f docker-compose.yml up -d```
 - Wait ~1 minute for the container to fully start.
 
 <br>
@@ -76,12 +77,12 @@ kubectl create secret generic flask-secrets \
 <br>
 
 ### 5. Deploy the Fluentd Daemonset using Helm
- `helm install splunk-connect splunk/splunk-connect-for-kubernetes -f enc_values.yaml`
+ ```helm install splunk-connect splunk/splunk-connect-for-kubernetes -f enc_values.yaml```
 
 <br>
 
  ### 6. Deploy the Web App
-`kubectl apply -f k8s/`
+```kubectl apply -f k8s/```
 
 <br>
 
@@ -89,7 +90,7 @@ kubectl create secret generic flask-secrets \
  
 Get the service URL:
 
-`minikube service nginx-frontend --url` 
+```minikube service nginx-frontend --url```
 
 Open the URL in your browser to access the frontend.
 
@@ -119,8 +120,8 @@ Open the URL in your browser to access the frontend.
         
 -   **Pods in CrashLoopBackOff?**
     
-    `kubectl describe pod <pod-name>`
-    `kubectl logs <pod-name>` 
+    ```kubectl describe pod <pod-name>```
+    ```kubectl logs <pod-name>```
     
 -   **Access issues on localhost?**
     
