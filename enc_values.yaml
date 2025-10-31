@@ -6,54 +6,33 @@ global:
             token: ENC[AES256_GCM,data:hX1CKLSsDasRMypC3SpQYtQBCGepHAH478pb0DtZbIUskycY,iv:KW/ds9E83hQrS6REWP1L5uPkChm7UBdqkBcJOCQa5TA=,tag:TCoYQAQXJiFYFEfKkuOofg==,type:str]
             protocol: ENC[AES256_GCM,data:GkecFQ==,iv:Ucq/CLDQzvvawJ7Mvb1K/FgPjtlzTQQddHtoywJxZIU=,tag:do01PJSyzc0MZ65Ib3V/Hg==,type:str]
             indexName: ENC[AES256_GCM,data:5YlPzA==,iv:nvJwm5u4kM7204C6KgkuhnP8m21jur93SDUpxjHb6YA=,tag:YXnSmyuCT72vHoiN+kn9UA==,type:str]
+            
 splunk-kubernetes-logging:
-    enabled: ENC[AES256_GCM,data:0Od3Gg==,iv:Qw+vovSvfScHoCKMlehzI2y8J13L61ZM/Z6jh3uVUU8=,tag:5OsQGZET/B9Z+Dorry3z3Q==,type:bool]
-    fluentd:
-        #ENC[AES256_GCM,data:RNKJCcE5QCCTe53cBvrEl85Ozb+PpZ4/FxAvrWDi0O+XsUpMD7Fj5imb4E39qkAGBrPQ7g==,iv:x3QfGocCQeYTr0IOpqFZgXaBzfAtt/zNRgusQoFFBAY=,tag:Qa+17sfgMxZ6z8XJxnnePw==,type:comment]
-        path: ENC[AES256_GCM,data:SLcKHbcREl389tsQDjczT+EPT1czzYuokA==,iv:KrbtMgGaylkdLZeRoE8mpifuzmqvReV8hDoqzkF9WXw=,tag:tCrmZwJ5a3AeeiUd3KR4oA==,type:str]
-        #ENC[AES256_GCM,data:0XnUtXcfXbwToXjURdCfd6icJV6MnqauzmF6jb0COPETiKA1woTmsDfZ4f+vr31oMAi//xUf+tVHXJSX1H3eiogbCe4C5Eg4ZVUXbpJYtfA7,iv:lc2aAFqaKgAZNt6Q3OfY4GbWiMgbpo6/ddTlb+14n+Q=,tag:BcUg2iph7GuUECgcTgTJFA==,type:comment]
-        #ENC[AES256_GCM,data:ga1Nkb+Svr0zyRiwB7+CHCYeeXEm7pUKV4hyfoxxA/Sv5NAeLvLIr6vjhYa76bisCQ==,iv:lIIagFGit5ActUoizP9HwPAA6OwTGqdbiWiQFKCNsm4=,tag:1G3jD9QLh/nP14qnj0Un4w==,type:comment]
-        exclude_path:
-            - ENC[AES256_GCM,data:0dvleGWRLSCOqLGn7mc6BU/Zxiches43msSDXeay96telvmUxvK9NUlc,iv:43pXqOOYjq4NN4H8YK8BH0ToXxaY95U4z0OdzHIVAm4=,tag:k0Urmz0aJi+4e6htkFg99w==,type:str]
-            - ENC[AES256_GCM,data:hZIfjDuImZio+81ohZWodpUct30O1GdhkNAkN1jMrA==,iv:4q8aDjM8oaep+tK1HgXH8RLLnVu7yVFPhus56Go7ujk=,tag:Dy1nWitSsmHOy0bkzDUBfA==,type:str]
-            - ENC[AES256_GCM,data:0u9L2lzzu2KEwzScMxkME6pzFIJZU2sIpkEXY7QT0CRrOn5FWyiL,iv:27hpR/+Q/Fa250/3Nw3H9lUAlclJ+L86aAYjN+H8jmg=,tag:w+SrJPZJDW1SzewdDgCGNA==,type:str]
-    rbac:
-        create: ENC[AES256_GCM,data:3irFQw==,iv:/dMBrGJN8RRPGGSfeMTKDoGNyCtVSSVA5+AHlZyBHvc=,tag:pibQrcafYKAf3raSls4oSA==,type:bool]
-    serviceAccount:
-        create: ENC[AES256_GCM,data:qIgq6w==,iv:f+LeZOy2TW+JO2Xa5+8dx8FPjrXMRYXElBVIAFlssvA=,tag:gZO/LBk/tg2brceLtjwaHw==,type:bool]
-    #ENC[AES256_GCM,data:tAA09P0YPbQx2I3FcHgqnK5MyrSs22xSVqWH7C68N1QpezoSyF9aEJxrNwisKMo3FUOvcLA=,iv:ZuQaE0P/3+6QM/1WQ3oBncO9g2/BSUUqAEtPTEu0w14=,tag:HmowBNxUIhMQMet/24lCyQ==,type:comment]
-    containers:
-        logFormatType: ENC[AES256_GCM,data:++IN,iv:ZToTFc2Ireylgm30OGHFT/3ctaUbK7g+ylBM6/lBgA0=,tag:+IDLrYdqt1IRmftAyae+eQ==,type:str]
-splunk-kubernetes-metrics:
-    #ENC[AES256_GCM,data:2AQ1AA321ag/ZA4=,iv:PbgCyuBteLQgNQIhqvXJdnRoFd2WnTTmEZeUml4LLA4=,tag:oECVT789hVBKtLCQX1Oghg==,type:comment]
-    enabled: ENC[AES256_GCM,data:oDXg0ow=,iv://XwjiPFxYbYqfpwoGPHvXzGGPJ1dA1kHzF9aQvQgwA=,tag:VwURBofjhCNKTMOP1lKGKQ==,type:bool]
-splunk-kubernetes-objects:
-    #ENC[AES256_GCM,data:JDMW7uhhGUj7O9s=,iv:B/yKqkOfJI43GGNHa/p69a881n+StYum0nkgP4GXnvg=,tag:9+BaOLRD/7PIeKAS/ql6vg==,type:comment]
-    enabled: ENC[AES256_GCM,data:oSzXztI=,iv:hLYuo1eGOyk+70VIVt+KetY/O2COvD72t37asWCgd0w=,tag:0Z6CWWUdC+V5m0M5b+0rIw==,type:bool]
-sops:
-    lastmodified: "2025-10-30T13:08:15Z"
-    mac: ENC[AES256_GCM,data:OXvht30kvjWzOExFt2Y9iZHcZqXlA23SfiGv6H4vBv1PIOlUytBzB6jA/h5xmb/gfnZ1XWxzM9befJwgUK2sEAlu9OSUNdsYUUxPdhuUALzlr/2tpfyiCjL/StIKctVuz0WKSrSFerA8XpHQDBx6k0hcspyjEXUAetq5a5l8E1M=,iv:fg+99E03fOVQI6IXa8nl1W+qKGa/Trgzw2vFG6Md/8s=,tag:TMWi3Un5Wkai4kuY9zfXNA==,type:str]
-    pgp:
-        - created_at: "2025-10-30T13:08:15Z"
-          enc: |-
-            -----BEGIN PGP MESSAGE-----
+  enabled: true
 
-            hQIMA6CFoE+r8tGCAQ/+K19oL1/KqjbfiGXgXvDB14yrJSPGvvGDRIGGmvojbtRN
-            XU9gqzszR6LOyReD1oyMk5WR4jtys0+vsNjRLtMljHjcfMuvXhUEmup5DN9IzkHr
-            H5FRJ7WWbLIH3sxh/W3Zs49KTu9sER6EdPdSJfRmSoPye5QKS4NSYIn1T9fWtmOM
-            rQovB7rrLNq4CDCDa2L2qEdnXpNFU2WNgDIy3puCViEKRsOzFGeLGkuuBPGq8k1Z
-            0PJI5Y9BnWGaZrVu2dVg/NkDiKEgjtOagMVe09Gwe3lJzRv22YXFjMLVau3I81do
-            IKlh61pgP0Ptzwu+k/+6cahn6jORgAplqRBoL7bS7XwwbYQi3CFCKBd6kbZu0TGJ
-            WkihOc8YfXZaPEmxJVJO8LTOqeZ3E3qn8suWXkPBw78938JH0yzVdhzMnWX1dqTu
-            JCo2qp0oGCrPYwFinHSboY8/Q6UUtRL/MmHBfL3RzWGh3mz7UmK87/lHH2Hk77XR
-            yfqMTgVKS4r7WLfAEwKJWq83QRXmusLIe+4Aitmyf1OWhVAiqxS/mkVLGw94CSSD
-            pAMuVOxRQnTp2RgHcQnhknwXIoXrdeHrgVwkQ7xgF+DND/Og1ZfbpwknmZjmI4nH
-            0pPtwjbllEvMVoSJaRpQlBXd2iowJXYcwqJ8L//HGgyfUieT6VTxNFb0mn9puYfU
-            aAEJAhAmbuEdrOWBxFfHuoH3HZhRef0TNiixfOXGB5gAX4kcaURrqolSzdxVp6m4
-            nUDuyH0zzYonUmynygdHhRDUtMihhcD0WoYTdEqEnylFCTUZQOzbSbz4D6YCjy1g
-            k8dmM6sJn0WR
-            =EY4m
-            -----END PGP MESSAGE-----
-          fp: 4632D9F2C24740C1CC95D689A05D2DE315A7817D
-    unencrypted_suffix: _unencrypted
-    version: 3.11.0
+  fluentd:
+    # path of logfiles, default /var/log/containers/*.log
+    path: /var/log/containers/*.log
+    # paths of logfiles to exclude. object type is array as per fluentd specification:
+    # https://docs.fluentd.org/input/tail#exclude_path
+    exclude_path:
+      - /var/log/containers/kube-svc-redirect*.log
+      - /var/log/containers/splunk*.log
+      - /var/log/containers/*_kube-system_*.log
+      
+  rbac:
+    create: true
+
+  serviceAccount:
+    create: true
+
+
+  # Exclude Splunk/Fluentd logs to avoid ingestion loops
+  containers:
+    logFormatType: cri
+
+splunk-kubernetes-metrics:
+  enabled: false  # Deprecated
+
+splunk-kubernetes-objects:
+  enabled: false  # Deprecated
