@@ -2,10 +2,10 @@ global:
     splunk:
         hec:
             host: ENC[AES256_GCM,data:PAI+kiGEbPY6Q5qU9F2J,iv:0mhXMJhChSjQasTYrL4aPZ5jXhkTEeQIKcDoOk+OaJA=,tag:4Z1JqbHdKhr3nPQh7YgAsg==,type:str]
-            port: ENC[AES256_GCM,data:mZcElg==,iv:mEDQ+r4w3N2pcAnJ5ZXY5pNArUGSmke0HI1MBnc8SGQ=,tag:ADFeKVviTrkdoc5v5enD7w==,type:int]
+            port: 8088
             token: ENC[AES256_GCM,data:hX1CKLSsDasRMypC3SpQYtQBCGepHAH478pb0DtZbIUskycY,iv:KW/ds9E83hQrS6REWP1L5uPkChm7UBdqkBcJOCQa5TA=,tag:TCoYQAQXJiFYFEfKkuOofg==,type:str]
-            protocol: ENC[AES256_GCM,data:GkecFQ==,iv:Ucq/CLDQzvvawJ7Mvb1K/FgPjtlzTQQddHtoywJxZIU=,tag:do01PJSyzc0MZ65Ib3V/Hg==,type:str]
-            indexName: ENC[AES256_GCM,data:5YlPzA==,iv:nvJwm5u4kM7204C6KgkuhnP8m21jur93SDUpxjHb6YA=,tag:YXnSmyuCT72vHoiN+kn9UA==,type:str]
+            protocol: http
+            indexName: main
             
 splunk-kubernetes-logging:
   enabled: true
