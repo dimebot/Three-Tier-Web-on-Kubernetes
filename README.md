@@ -50,6 +50,7 @@ kubectl create secret generic flask-secrets \
 
 ### 3. Spin up the Splunk Container
 `docker compose -f docker-compose.yml up -d`
+
 Wait ~1 minute for the container to fully start.
 ### 4. Generate HEC token
 -   Log in to Splunk Web (`http://<localhost>:8000`) 
@@ -63,7 +64,8 @@ Wait ~1 minute for the container to fully start.
     
 -   Use this token in your `enc_values.yaml`.
 -  Also update the *host* in `enc_values.yaml`
- **Note**: *The host name shouldn't be set to localhost, use your device's private IP retrieved from `ipconfig` or `ifconfig`*.
+
+**Note**: *The host name shouldn't be set to localhost, use your device's private IP retrieved from `ipconfig` or `ifconfig`*.
 
 ### 5. Deploy the Fluentd Daemonset using Helm
  `helm install splunk-connect splunk/splunk-connect-for-kubernetes -f enc_values.yaml`
