@@ -12,6 +12,7 @@ def_values.yml
 .dockerignore
 values.yaml
 compose_1.txt
+.env
 
 
 # Ignore system files
