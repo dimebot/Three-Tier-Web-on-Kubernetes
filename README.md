@@ -28,6 +28,8 @@ git clone https://github.com/dimebot/Three-Tier-Web-on-Kubernetes-with-Splunk-Mo
 ```bash
 minikube start
 ```
+<br>
+
 ### 2. Create Kubernetes Secrets
 Set the secrets as per your convenience, however make sure that **MYSQL_DATABASE**, **MYSQL_USER** and **MYSQL_PASSWORD** match in both Flask and MySQL secrets.
 
@@ -48,10 +50,15 @@ kubectl create secret generic flask-secrets \
   --from-literal=MYSQL_HOST=<database name>
   ```
 
+<br>
+
 ### 3. Spin up the Splunk Container
 `docker compose -f docker-compose.yml up -d`
 
 Wait ~1 minute for the container to fully start.
+
+<br>
+
 ### 4. Generate HEC token
 -   Log in to Splunk Web (`http://<localhost>:8000`) 
 -   Go to **Settings → Data Inputs → HTTP Event Collector → + Add New**
@@ -64,15 +71,20 @@ Wait ~1 minute for the container to fully start.
     
 -   Use this token in your `enc_values.yaml`.
 -  Also update the *host* in `enc_values.yaml`
-
 **Note**: *The host name shouldn't be set to localhost, use your device's private IP retrieved from `ipconfig` or `ifconfig`*.
+
+<br>
 
 ### 5. Deploy the Fluentd Daemonset using Helm
  `helm install splunk-connect splunk/splunk-connect-for-kubernetes -f enc_values.yaml`
- 
+
+<br>
+
  ### 6. Deploy the Web App
 `kubectl apply -f k8s/`
- 
+
+<br>
+
  ### 6. Access the Web Application
  
 Get the service URL:
