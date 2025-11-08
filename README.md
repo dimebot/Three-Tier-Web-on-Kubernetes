@@ -80,6 +80,13 @@ docker compose -f docker-compose.yml up -d
 <br>
 
 ### 5. Deploy the Fluentd Daemonset using Helm
+  -   Add the repo and update helm
+```
+helm repo add splunk https://splunk.github.io/splunk-connect-for-kubernetes/
+helm repo update
+
+```
+<br>
  ```
  helm install splunk-connect splunk/splunk-connect-for-kubernetes -f enc_values.yaml
  ```
