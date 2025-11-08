@@ -84,9 +84,11 @@ docker compose -f docker-compose.yml up -d
 ```
 helm repo add splunk https://splunk.github.io/splunk-connect-for-kubernetes/
 helm repo update
-
 ```
 <br>
+
+- Apply the config
+
  ```
  helm install splunk-connect splunk/splunk-connect-for-kubernetes -f enc_values.yaml
  ```
