@@ -26,6 +26,7 @@ kind: Service
 metadata:
   name: nginx-frontend
 spec:
+  externalTrafficPolicy: Local
   selector:
     app: nginx-frontend
   ports:

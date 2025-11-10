@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 import logging 
+import sys
 import time
 import pymysql
 import os
@@ -91,11 +92,28 @@ def register():
 
     return render_template('register.html')
 
-logging.basicConfig(
-    filename='logs/flask_app.log',
-    level=logging.INFO,
-    format='%(asctime)s %(message)s'
-)
+# Configure logging to both stdout and file
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Create logs directory if it doesn't exist
+os.makedirs('logs', exist_ok=True)
+
+# File handler
+file_handler = logging.FileHandler('logs/flask_app.log')
+file_handler.setLevel(logging.INFO)
+file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(file_formatter)
+
+# Stream handler (stdout)
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setLevel(logging.INFO)
+stream_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+stream_handler.setFormatter(stream_formatter)
+
+# Add both handlers to logger
+logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -106,12 +124,12 @@ def login():
         ip = get_client_ip()  # get actual IP
 
         if not user or not check_password_hash(user.password, password):
-            logging.warning(f'Failed login attempt for {username} from IP {ip}')
+            logger.warning(f'Failed login attempt for {username} from IP {ip}')
             flash('Invalid username or password', 'danger')
             return redirect(url_for('login'))
 
         login_user(user)
-        logging.info(f'{username} logged in successfully from IP {ip}')
+        logger.info(f'{username} logged in successfully from IP {ip}')
         return redirect(url_for('home'))
 
     return render_template('login.html')
