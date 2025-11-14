@@ -19,7 +19,7 @@ splunk-kubernetes-logging:
       - /var/log/containers/kube-svc-redirect*.log
       - /var/log/containers/splunk*.log
       - /var/log/containers/*_kube-system_*.log
-      
+      - /var/log/containers/kube-flannel*.log
   rbac:
     create: true
 
